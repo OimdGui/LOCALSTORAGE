@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste LOCALSTORAGE</title>
+
+    <script>
+        let contadorChave = 0;
+
+        function exibirVariavel() {
+            let nome = document.getElementById('nome').value;
+            alert(nome);
+        }
+
+        function salvarLocalmente() {
+            let nome = document.getElementById('nome').value;
+
+            localStorage.setItem(contadorChave, nome);
+
+            contadorChave = contadorChave + 1;
+        }
+
+        function listarLocal() {
+            let pesquisachave = document.getElementById('chave').value;
+
+            alert(localStorage.getItem(pesquisachave));
+        }
+    </script>
+</head>
+
+<body>
+
+    <input type="text" id="nome" placeholder="Insira um nome aqui.">
+
+    <input type="text" id="chave" placeholder="Insira chave">
+
+    <input type="button" value="CLIQUE AQUI" onclick="exibirVariavel()">
+
+    <input type="button" value="SALVAR NO LOCALSTORAGE" onclick="salvarLocalmente()">
+
+    <input type="button" value="EXIBIR" onclick="listarLocal()">
+
+</body>
+</html>
