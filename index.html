@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores e Matérias</title>
+    <script>
+        function exibirProfessor() {
+            let materia = document.getElementById('materia').value;
+            let professor = localStorage.getItem(materia);
+            alert(professor);
+        }
+
+        function salvarProfessor() {
+            let materia = document.getElementById('materia').value;
+            let professor = document.getElementById('professor').value;
+            localStorage.setItem(materia, professor);
+        }
+
+        function listarProfessor() {
+            let materia = document.getElementById('buscaMateria').value;
+            let professor = localStorage.getItem(materia);
+            alert(professor);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="materia" placeholder="Digite a matéria">
+    <input type="text" id="professor" placeholder="Digite o professor">
+    <input type="button" value="SALVAR" onclick="salvarProfessor()">
+    <input type="text" id="buscaMateria" placeholder="Digite a matéria para pesquisar">
+    <input type="button" value="EXIBIR PROFESSOR" onclick="listarProfessor()">
+</body>
+</html>
